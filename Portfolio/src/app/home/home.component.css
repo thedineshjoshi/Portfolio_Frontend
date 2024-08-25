@@ -46,9 +46,9 @@ nav ul li a {
 nav ul li a:hover {
     background-color: white;
     color: #4CAF50; 
+    cursor: pointer;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -62,19 +62,19 @@ nav ul li a:hover {
 
 @media (max-width: 480px) {
     header {
-        padding: 15px 20px; /* Reduce padding on mobile */
+        padding: 15px 20px; 
     }
 
     .logo img {
-        width: 50px; /* Smaller logo on mobile */
+        width: 50px; 
     }
 
     .name h1 {
-        font-size: 1.5em; /* Smaller font size for the name */
+        font-size: 1.5em;
     }
 
     nav ul {
-        flex-direction: column; /* Stack nav items vertically */
+        flex-direction: column; 
         gap: 10px;
     }
 

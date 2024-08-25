@@ -1,7 +1,7 @@
 #about {
-    background-color: #4CAF50; /* Matching the header's background color */
+    background-color: #4CAF50;
     color: white;
-    padding: 60px 20px; /* Padding around the section */
+    padding: 60px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,15 +13,14 @@
     max-width: 1200px;
     width: 100%;
     gap: 40px;
-    /* align-items: center; */
 }
 
 .about-image img {
     width: 100%;
-    max-width: 400px; /* Large image size */
+    max-width: 400px;
     border-radius: 10px;
     object-fit: cover;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adding a shadow for an eye-catching effect */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .about-content {
@@ -48,13 +47,15 @@
     text-align: justify;
 }
 
-/* Social Media Icons Styling */
-/* Social Media Icons Styling */
 .social-media {
     margin-top: 30px;
     display: flex;
-    justify-content: center; /* Center the icons horizontally */
-    gap: 15px; /* Space between icons */
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-media a {
+    text-decoration: none;
 }
 
 .social-icon {
@@ -64,45 +65,235 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: #e0e0e0; /* Light gray background for neumorphism */
-    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7); /* Neumorphism effect */
+    background: #e0e0e0;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7);
     transition: all 0.3s ease;
-    color: #333; /* Default icon color */
-    font-size: 24px; /* Adjust icon size */
+    color: #333;
+    font-size: 24px;
 }
 
 .social-icon i {
-    margin: 0; /* Remove default margin from icons */
+    margin: 0;
     text-decoration: none;
 }
 
 .social-icon:hover {
-    background: #d0d0d0; /* Slightly darker background on hover */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.8); /* Hover effect */
+    background: #d0d0d0;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.8);
 }
 
 .social-icon.facebook:hover {
-    background: #3b5998; /* Facebook color */
-    color: #fff; /* White icon color */
+    background: #3b5998;
+    color: #fff;
 }
 
 .social-icon.instagram:hover {
-    background: #e4405f; /* Instagram color */
-    color: #fff; /* White icon color */
+    background: #e4405f;
+    color: #fff;
 }
 
 .social-icon.linkedin:hover {
-    background: #0077b5; /* LinkedIn color */
-    color: #fff; /* White icon color */
+    background: #0077b5;
+    color: #fff;
 }
 
 .social-icon.github:hover {
-    background: #333; /* GitHub color */
-    color: #fff; /* White icon color */
+    background: #333;
+    color: #fff;
 }
 
+.button-group {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
-/* Responsive Design */
+.btn {
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #4CAF50;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #45a049;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.8);
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+
+.hire-me {
+    background-color: #4CAF50;
+}
+
+.hire-me:hover {
+    background-color: #45a049;
+}
+
+.lets-talk {
+    background-color: #2196F3;
+}
+
+.lets-talk:hover {
+    background-color: #1976D2;
+}
+
+#whyHireMe {
+    padding: 60px 20px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#whyHireMe .texts {
+    flex: 1;
+    max-width: 50%;
+    margin-right: 20px;
+}
+
+#whyHireMe h3 {
+    font-size: 24px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+#whyHireMe h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+#whyHireMe p {
+    font-size: 18px;
+    color: #666;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+#whyHireMe .btn.hire-me {
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #4CAF50;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+#whyHireMe .btn.hire-me:hover {
+    background-color: #45a049;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.8);
+    transform: translateY(-3px);
+}
+
+#whyHireMe .talents {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+#whyHireMe .talent-box {
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    transition: all 0.3s ease;
+}
+
+#whyHireMe .talent-box:hover {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.8);
+    transform: translateY(-5px);
+}
+
+#whyHireMe .talent-box i {
+    font-size: 40px;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
+
+#whyHireMe .talent-box h4 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#whyHireMe .talent-box p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+@media (max-width: 1024px) {
+    #whyHireMe {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #whyHireMe .texts, #whyHireMe .talents {
+        max-width: 100%;
+    }
+
+    #whyHireMe .texts {
+        margin-bottom: 40px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    #whyHireMe h2 {
+        font-size: 28px;
+    }
+
+    #whyHireMe p {
+        font-size: 16px;
+    }
+
+    #whyHireMe .talent-box {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    #whyHireMe h2 {
+        font-size: 24px;
+    }
+
+    #whyHireMe p {
+        font-size: 14px;
+    }
+
+    #whyHireMe .talent-box i {
+        font-size: 30px;
+    }
+
+    #whyHireMe .talent-box h4 {
+        font-size: 20px;
+    }
+
+    #whyHireMe .talent-box p {
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 768px) {
     #about {
         padding: 40px 20px;
