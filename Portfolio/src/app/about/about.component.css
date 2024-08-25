@@ -1,0 +1,154 @@
+#about {
+    background-color: #4CAF50; /* Matching the header's background color */
+    color: white;
+    padding: 60px 20px; /* Padding around the section */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.about-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 40px;
+    /* align-items: center; */
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px; /* Large image size */
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adding a shadow for an eye-catching effect */
+}
+
+.about-content {
+    max-width: 600px;
+}
+
+.about-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.about-content h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: 300;
+}
+
+.about-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #f0f0f0;
+    text-align: justify;
+}
+
+/* Social Media Icons Styling */
+/* Social Media Icons Styling */
+.social-media {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    gap: 15px; /* Space between icons */
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #e0e0e0; /* Light gray background for neumorphism */
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7); /* Neumorphism effect */
+    transition: all 0.3s ease;
+    color: #333; /* Default icon color */
+    font-size: 24px; /* Adjust icon size */
+}
+
+.social-icon i {
+    margin: 0; /* Remove default margin from icons */
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: #d0d0d0; /* Slightly darker background on hover */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2), -4px -4px 10px rgba(255, 255, 255, 0.8); /* Hover effect */
+}
+
+.social-icon.facebook:hover {
+    background: #3b5998; /* Facebook color */
+    color: #fff; /* White icon color */
+}
+
+.social-icon.instagram:hover {
+    background: #e4405f; /* Instagram color */
+    color: #fff; /* White icon color */
+}
+
+.social-icon.linkedin:hover {
+    background: #0077b5; /* LinkedIn color */
+    color: #fff; /* White icon color */
+}
+
+.social-icon.github:hover {
+    background: #333; /* GitHub color */
+    color: #fff; /* White icon color */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about {
+        padding: 40px 20px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        max-width: 300px;
+        margin-bottom: 30px;
+    }
+
+    .about-content h2 {
+        font-size: 2em;
+    }
+
+    .about-content h3 {
+        font-size: 1.5em;
+    }
+
+    .about-content p {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container {
+        gap: 20px;
+    }
+
+    .about-content h2 {
+        font-size: 1.8em;
+    }
+
+    .about-content h3 {
+        font-size: 1.2em;
+    }
+
+    .about-content p {
+        font-size: 1em;
+    }
+
+    .about-image img {
+        max-width: 250px;
+    }
+}
