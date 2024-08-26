@@ -1,20 +1,44 @@
 <header>
-    <div class="logo">
-        <img src="/images/dinesh.png" alt="Logo"/>
-    
-    <div class="name">
-        <h1>Dinesh Prasad Joshi</h1>
-    </div></div>
-    <nav>
-        <ul>
-            <li><a routerLink="/home">Home</a></li>
-            <li><a routerLink="/about">About</a></li>
-            <li><a routerLink="">Timeline</a></li>
-            <li><a routerLink="">Blogs</a></li>
-            <li><a routerLink="">Projects</a></li>
-            <li><a routerLink="">Contact Me</a></li>
-        </ul>
-    </nav>
+    <div class="header-container">
+        <div class="logo">
+            <img src="/images/dinesh.png" alt="Logo" />
+            <div class="name">
+                <h1>Dinesh Prasad Joshi</h1>
+            </div>
+        </div>
+        <div class="hamburger" id="hamburger">
+            &#9776;
+        </div>
+        <nav id="nav">
+            <ul class="nav-links" id="nav-links">
+                <li><a routerLink="/home" fragment="home">Home</a></li>
+                <li><a routerLink="/home" fragment="about">About</a></li>
+                <li><a routerLink="/home" fragment="timeline">Timeline</a></li>
+                <li><a routerLink="/home" fragment="blogs">Blogs</a></li>
+                <li><a routerLink="/home" fragment="projects">Projects</a></li>
+                <li><a routerLink="/home" fragment="contact">Contact Me</a></li>
+              </ul>
+        </nav>
+    </div>
 </header>
-<app-about></app-about>
-<app-timeline></app-timeline>
+
+<section id="about">
+    <app-about></app-about>
+  </section>
+  
+  <section id="timeline">
+    <app-timeline></app-timeline>
+  </section>
+  
+  <section id="blogs">
+    <app-blog></app-blog>
+  </section>
+  
+  <section id="projects">
+    <app-project></app-project>
+  </section>
+  
+  <section id="contact">
+    <app-contact></app-contact>
+  </section>
+  

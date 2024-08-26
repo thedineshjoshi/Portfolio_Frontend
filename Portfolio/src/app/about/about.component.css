@@ -144,6 +144,12 @@
 .lets-talk:hover {
     background-color: #1976D2;
 }
+.download-CV{
+    background-color: #e4405f;
+}
+.download-CV:hover {
+    background-color: #b51d39;
+}
 
 #whyHireMe {
     padding: 60px 20px;
