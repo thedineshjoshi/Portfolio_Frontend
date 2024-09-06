@@ -1,0 +1,58 @@
+<nav class="navbar">
+    <ul>
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a routerLink="/dashboard/manageblog">Blogs</a></li>
+        <li><a routerLink="/dashboard/manageproject">Projects</a></li>
+        <li><a href="#">Settings</a></li>
+    </ul>
+</nav>
+<button style="float: right; margin: 10px; background-color: blue; color: white;;" id="Add" (click)="openAddBlogModal()" class="btn add-btn">
+    <i class="fas fa-add"></i> Add Blog
+</button>
+<div class="blog-grid">
+    <div class="blog-card" *ngFor="let blog of blogs">
+        <img [src]="blog.featuredImageUrl" alt="{{ blog.title }}" class="blog-image" />
+        <div class="blog-info">
+            <h2 class="blog-title">{{ blog.title }}</h2>
+            <p class="blog-description">{{ blog.metaDescription }}</p>
+            <div class="button-container">
+                <button id="Edit" (click)="openEditBlogModal(blog)" class="btn edit-btn">
+                    <i class="fas fa-edit"></i> Edit
+                </button>
+                <button id="Delete" (click)="confirmDelete(blog.id!)" class="btn delete-btn">
+                    <i class="fas fa-trash-alt"></i> Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal for Add/Edit Blog -->
+<div id="addEditBlogModal" class="modal">
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h2 *ngIf="!isEditMode">Add New Blog</h2>
+        <h2 *ngIf="isEditMode">Edit Blog</h2>
+
+        <form (ngSubmit)="submitBlog()">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" [(ngModel)]="blogPost.title" required />
+
+            <label for="metaDescription">Meta Description</label>
+            <input type="text" id="metaDescription" name="metaDescription" [(ngModel)]="blogPost.metaDescription" required />
+
+            <label for="featuredImage">Featured Image URL</label>
+            <input type="file" id="featuredImage" name="featuredImageUrl" [(ngModel)]="blogPost.featuredImageUrl" (change)="onFileSelected($event)" />
+
+            <label for="editor">Content</label>
+            <div id="editor"></div>
+
+            <label for="youtubeLink">YouTube Video Link</label>
+            <input type="text" id="youtubeLink" name="youtubeVideoLink" [(ngModel)]="blogPost.youtubeVideoLink" />
+
+            <button type="submit" class="btn submit-btn">
+                {{ isEditMode ? 'Update Blog' : 'Submit Blog' }}
+            </button>
+        </form>
+    </div>
+</div>

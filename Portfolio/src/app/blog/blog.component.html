@@ -1,63 +1,13 @@
 <section id="blogs">
     <div class="blogs-container">
         <!-- Blog Card 1 -->
-        <div class="blog-card">
-            <img src="featured-image1.jpg" alt="Featured Image 1">
+        <div class="blog-card" *ngFor="let blog of blogs">
+            <img [src]="blog.featuredImageUrl" alt="{{ blog.title }}" class="blog-image" />
             <div class="blog-content">
                 <span class="blog-label">Category</span>
-                <h3 class="blog-title">Blog Title 1</h3>
-                <p class="blog-preview">This is a short preview of the blog content. It should give a quick summary of what the blog is about...</p>
-                <a href="#" class="blog-read-more">Read More</a>
-            </div>
-        </div>
-        <!-- Blog Card 2 -->
-        <div class="blog-card">
-            <img src="featured-image2.jpg" alt="Featured Image 2">
-            <div class="blog-content">
-                <span class="blog-label">Category</span>
-                <h3 class="blog-title">Blog Title 2</h3>
-                <p class="blog-preview">This is a short preview of the blog content. It should give a quick summary of what the blog is about...</p>
-                <a href="#" class="blog-read-more">Read More</a>
-            </div>
-        </div>
-        <!-- Blog Card 3 -->
-        <div class="blog-card">
-            <img src="featured-image3.jpg" alt="Featured Image 3">
-            <div class="blog-content">
-                <span class="blog-label">Category</span>
-                <h3 class="blog-title">Blog Title 3</h3>
-                <p class="blog-preview">This is a short preview of the blog content. It should give a quick summary of what the blog is about...</p>
-                <a href="#" class="blog-read-more">Read More</a>
-            </div>
-        </div>
-        <!-- Blog Card 4 -->
-        <div class="blog-card">
-            <img src="featured-image4.jpg" alt="Featured Image 4">
-            <div class="blog-content">
-                <span class="blog-label">Category</span>
-                <h3 class="blog-title">Blog Title 4</h3>
-                <p class="blog-preview">This is a short preview of the blog content. It should give a quick summary of what the blog is about...</p>
-                <a href="#" class="blog-read-more">Read More</a>
-            </div>
-        </div>
-        <!-- Blog Card 5 -->
-        <div class="blog-card">
-            <img src="featured-image5.jpg" alt="Featured Image 5">
-            <div class="blog-content">
-                <span class="blog-label">Category</span>
-                <h3 class="blog-title">Blog Title 5</h3>
-                <p class="blog-preview">This is a short preview of the blog content. It should give a quick summary of what the blog is about...</p>
-                <a href="#" class="blog-read-more">Read More</a>
-            </div>
-        </div>
-        <!-- Blog Card 6 -->
-        <div class="blog-card">
-            <img src="featured-image6.jpg" alt="Featured Image 6">
-            <div class="blog-content">
-                <span class="blog-label">Category</span>
-                <h3 class="blog-title">Blog Title 6</h3>
-                <p class="blog-preview">This is a short preview of the blog content. It should give a quick summary of what the blog is about...</p>
-                <a href="#" class="blog-read-more">Read More</a>
+                <h3 class="blog-title">{{ blog.title }}</h3>
+                <p class="blog-preview">{{blog.metaDescription}}</p>
+                <a class="blog-read-more" [routerLink]="['/blog-details']" [queryParams]="{ id: blog.id }" target="_blank">Read More</a>
             </div>
         </div>
     </div>

@@ -5,6 +5,11 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { BlogComponent } from './blog/blog.component';
 import { ProjectComponent } from './project/project.component';
 import { ContactComponent } from './contact/contact.component';
+import { LoginComponent } from './CMS/login/login.component';
+import { DashboardComponent } from './CMS/dashboard/dashboard.component';
+import { ManageBlogsComponent } from './CMS/manage-blogs/manage-blogs.component';
+import { ManageprojectsComponent } from './CMS/manageprojects/manageprojects.component';
+import { BlogDetailsComponent } from './blog-details/blog-details.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,5 +19,10 @@ export const routes: Routes = [
     {path:'blog',component:BlogComponent,pathMatch:'full'},
     {path:'contact',component:ContactComponent,pathMatch:'full'},
     {path:'project',component:ProjectComponent,pathMatch:'full'},
-
+    {path:'login',component:LoginComponent,pathMatch:'full'},
+    {path:'dashboard',component:DashboardComponent,pathMatch:'full'},
+    {path:'project',component:ProjectComponent,pathMatch:'full'},
+    {path:'dashboard/manageblog',component:ManageBlogsComponent,pathMatch:'full'},
+    {path:'dashboard/manageproject',component:ManageprojectsComponent,pathMatch:'full'},
+    { path: 'blog-details', component: BlogDetailsComponent }
 ]
