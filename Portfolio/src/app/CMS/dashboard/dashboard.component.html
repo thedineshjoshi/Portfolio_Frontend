@@ -3,8 +3,8 @@
             <h2>Dashboard</h2>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Projects</a></li>
+                    <li><a routerLink="Dashboard">Home</a></li>
+                    <li><a routerLink="manageproject">Projects</a></li>
                     <li><a routerLink="manageblog">Blogs</a></li>
                     <li><a href="#">Settings</a></li>
                 </ul>
@@ -13,8 +13,7 @@
 
         <div class="main-content">
             <header>
-                <h1>Welcome to Your Dashboard</h1>
-                <button id="addBlogBtn" class="btn">Add New Blog</button>
+                <h1>Welcome to Dashboard</h1>
             </header>
 
             <!-- Blog posts grid -->
@@ -24,35 +23,6 @@
                     <div class="blog-info">
                         <h2 class="blog-title">{{ blog.title }}</h2>
                         <p class="blog-description">{{ blog.metaDescription }}</p>
-                        <a [href]="blog.youtubeVideoLink" class="btn" target="_blank">Watch Video</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Modal for adding a new blog -->
-            <div id="addBlogModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h2>Add New Blog</h2>
-                    <form id="addBlogForm">
-                        <label for="title">Title</label>
-                        <input type="text" id="title" name="title" [(ngModel)]="blogPost.title" required>
-
-                        <label for="metaDescription">Meta Description</label>
-                        <input type="text" id="metaDescription" [(ngModel)]="blogPost.metaDescription" name="metaDescription" required>
-
-                        <label for="featuredImage">Featured Image</label>
-                        <input type="file" id="featuredImage" (change)="onFileSelected($event)" name="featuredImage">
-
-                        <label for="editor">Content</label>
-                        <div id="editor"></div>
-
-                        <label for="youtubeLink">YouTube Video Link</label>
-                        <input type="text" id="youtubeLink" [(ngModel)]="blogPost.youtubeVideoLink" name="youtubeLink">
-
-                        <button type="submit" class="btn" (click)="addBlog()">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>

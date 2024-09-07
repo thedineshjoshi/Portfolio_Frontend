@@ -5,6 +5,7 @@ import { Login } from '../Model/login.model';
 import { JwtPayload } from '../Model/jwtPayload/jwtPayload.module';
 import { Router } from '@angular/router';
 import { WindowRefService } from './window.service';
+import { Token } from '@angular/compiler';
 
 
 @Injectable({
@@ -15,7 +16,7 @@ export class AuthService {
   constructor(private _httpService:HttpClient,private _route:Router,private windowRef: WindowRefService) { }
   
   login(login:Login):Observable<any> {
-    return this._httpService.post("http://localhost:7040/api/Login/login",login);
+    return this._httpService.post("https://localhost:7209/api/Login",login);
   }
 
   decodeToken():JwtPayload
@@ -33,7 +34,11 @@ export class AuthService {
       const payload = token.split('.')[1];
       const decodedPayload = atob(payload.replace(/-/g, '+').replace(/_/g, '/'));
       return JSON.parse(decodedPayload);
-  } 
+  }
+
+  clearAll(): void {
+    window.localStorage.clear();
+  }
 
   getTokenExpirationDate(): Date{
     const decodedToken = this.decodeToken();

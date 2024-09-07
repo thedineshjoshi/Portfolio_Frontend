@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../Interfaces/project';
+import { ApiCallService } from '../service/api-call.service';
+import { ProjectPost } from '../Model/project-post.model';
 
 @Component({
   selector: 'app-project',
@@ -10,11 +12,11 @@ import { Project } from '../Interfaces/project';
   styleUrl: './project.component.css'
 })
 export class ProjectComponent implements OnInit {
-  projects:Project[]=[];
+  projects:ProjectPost[]=[];
   pageIndex = 0;
   pageSize = 6;
 
-  constructor() {}
+  constructor(private _apiCallService:ApiCallService) {}
 
   ngOnInit(): void {
     this.loadProjects();
@@ -30,15 +32,13 @@ export class ProjectComponent implements OnInit {
   }
 
   loadProjects(): void {
-    // Replace this with an actual API call
-    const newProjects = Array.from({ length: this.pageSize }, (_, i) => ({
-      id: this.pageIndex * this.pageSize + i,
-      title: `Project ${(this.pageIndex * this.pageSize + i + 1)}`,
-      description: 'A brief description of the project.',
-      image: '/assets/project-image.png'  // Replace with your image path
-    }));
-
-    this.projects = [...this.projects, ...newProjects];
-    this.pageIndex++;
+    this._apiCallService.getAllProjects().subscribe(
+      projects => {
+        this.projects = projects;
+      },
+      error => {
+        console.error('Error loading projects', error);
+      }
+    );
   }
 }

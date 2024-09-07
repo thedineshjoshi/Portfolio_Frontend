@@ -1,1 +1,53 @@
-<p>manageprojects works!</p>
+<nav class="navbar">
+    <ul>
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a routerLink="/dashboard/manageblog">Blogs</a></li>
+        <li><a routerLink="/dashboard/manageproject">Projects</a></li>
+        <li><a href="#">Settings</a></li>
+    </ul>
+</nav>
+<button (click)="openModal()" style="width: 100%; margin: 10px 0px; background-color: blue; color: white;" id="Add" class="btn add-btn">
+    <i class="fas fa-add"></i> Add Project</button>
+
+<div class="project-grid">
+    <div class="project-card" *ngFor="let project of projects">
+        <img [src]="project.featuredImageUrl" alt="" class="project-image" />
+        <div class="project-info">
+            <h2 class="project-title">{{project.title}}</h2>
+            <p class="project-description">{{project.description}}</p>
+            <a href="{{project.link}}" target="_blank" class="social-icon github">
+                <i class="fab fa-github"></i>
+            </a>
+            <div class="button-container">
+                <button id="Edit" (click)="openEditProjectModal(project)" class="btn edit-btn">
+                    <i class="fas fa-edit"></i> Edit
+                </button>
+                <button id="Delete" (click)="confirmDelete(project.id!)" class="btn delete-btn">
+                    <i class="fas fa-trash-alt"></i> Delete
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <!-- Modal for adding a new project -->
+ <div id="addprojectModal" class="modal">
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h2 *ngIf="!isEditMode">Add New Blog</h2>
+        <h2 *ngIf="isEditMode">Edit Blog</h2>
+        <form id="addprojectForm" (ngSubmit)="submitProject()">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" [(ngModel)]="projectPost.title" required>
+
+            <label for="metaDescription">Description</label>
+            <input type="text" id="Description" name="Description" [(ngModel)]="projectPost.description"  required>
+
+            <label for="featuredImage">Featured Image</label>
+            <input type="file" id="featuredImage" (change)="onFileSelected($event)" name="featuredImage">
+            <label for="Link">GitHub Link</label>
+            <input type="text" id="title"[(ngModel)]="projectPost.link" name="link">
+            <button type="submit" class="btn submit-btn"> {{ isEditMode ? 'Update Project' : 'Submit Project' }}</button>
+        </form>
+    </div>
+</div>

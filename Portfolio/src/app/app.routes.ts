@@ -10,6 +10,7 @@ import { DashboardComponent } from './CMS/dashboard/dashboard.component';
 import { ManageBlogsComponent } from './CMS/manage-blogs/manage-blogs.component';
 import { ManageprojectsComponent } from './CMS/manageprojects/manageprojects.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
+import { AuthguardService } from './service/authguard.service';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -20,9 +21,9 @@ export const routes: Routes = [
     {path:'contact',component:ContactComponent,pathMatch:'full'},
     {path:'project',component:ProjectComponent,pathMatch:'full'},
     {path:'login',component:LoginComponent,pathMatch:'full'},
-    {path:'dashboard',component:DashboardComponent,pathMatch:'full'},
+    {path:'dashboard',component:DashboardComponent,pathMatch:'full',canActivate:[AuthguardService]},
     {path:'project',component:ProjectComponent,pathMatch:'full'},
-    {path:'dashboard/manageblog',component:ManageBlogsComponent,pathMatch:'full'},
-    {path:'dashboard/manageproject',component:ManageprojectsComponent,pathMatch:'full'},
+    {path:'dashboard/manageblog',component:ManageBlogsComponent,pathMatch:'full',canActivate:[AuthguardService]},
+    {path:'dashboard/manageproject',component:ManageprojectsComponent,pathMatch:'full',canActivate:[AuthguardService]},
     { path: 'blog-details', component: BlogDetailsComponent }
 ]

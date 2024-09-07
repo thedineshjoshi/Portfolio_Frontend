@@ -17,7 +17,7 @@
     border-radius: 10px;
     box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1), -8px -8px 15px rgba(255, 255, 255, 0.7);
     padding: 20px;
-    text-align: center;
+    text-align: center;;
     scroll-snap-align: start;
     transition: transform 0.3s ease;
 }
@@ -56,6 +56,7 @@
     scroll-snap-type: x mandatory; 
     padding: 10px;
     gap: 20px; 
+    align-items: center;
 }
 
 .project-card {
@@ -82,3 +83,46 @@
     background-color: #555;
 }
 
+/* Add this in your component's CSS or global styles.css */
+
+/* Styling the button */
+a{
+    text-decoration: none;
+}
+.github-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #333; /* GitHub dark color */
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* GitHub icon styling */
+  .github-btn i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 20px;
+  }
+  
+  /* Hover effect */
+  .github-btn:hover {
+    background-color: #555; /* Lighter shade on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+  }
+  
+  /* Focus and active states for accessibility */
+  .github-btn:focus,
+  .github-btn:active {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5), 0 0 0 5px rgba(0, 0, 0, 0.2); /* Custom focus outline */
+  }
+  
+  
