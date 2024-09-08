@@ -1,35 +1,50 @@
-<div class="container">
-  <h1>{{ blog.title }}</h1>
-  <img [src]="blog.featuredImageUrl" alt="{{ blog.title }}" class="featured-image">
-  <div [innerHTML]="blog.content" class="blog-content"></div>
-  <div class="video-container" *ngIf="blog.youtubeVideoLink">
-    <iframe 
-      [src]="sanitizeUrl(blog.youtubeVideoLink)" 
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen>
-    </iframe>
+  <div class="container">
+    <h1>{{ blog.title }}</h1>
+    <img [src]="blog.featuredImageUrl" alt="{{ blog.title }}" class="featured-image">
+    <div [innerHTML]="blog.content" class="blog-content"></div>
+    <div class="video-container" *ngIf="blog.youtubeVideoLink">
+      <iframe 
+        [src]="sanitizeUrl(blog.youtubeVideoLink)" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div> 
+    <!-- comment read section -->
+    <div class="comments-section">
+      <h2>Comments</h2>
+      <div *ngIf="comments.length > 0; else noComments">
+        <div *ngFor="let comment of comments" class="comment">
+          <div class="comment-header">
+            <strong>{{ comment.name }}</strong> <span style="float: right;">{{ comment.postedAt | date:'yyyy-MM-dd' }}</span>
+          </div>
+          <p>{{ comment.content }}</p>
+        </div>
+      </div>
+      <ng-template #noComments>
+        <p>No comments yet.</p>
+      </ng-template>
+    </div>
     
+    <!-- Comment Section -->
+    <div class="comment-section">
+        <h3>Leave a Comment</h3>
+        <form class="comment-form" (ngSubmit)="addComment()">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" [(ngModel)]="postBlogComment.name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" [(ngModel)]="postBlogComment.email" placeholder="Your email" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea id="comment" name="comment" placeholder="Write your comment here" [(ngModel)]="postBlogComment.content" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">
+                <i class="fa fa-paper-plane"></i> Submit
+            </button>
+        </form>
+    </div>
   </div>
-  <!-- Comment Section -->
-  <div class="comment-section">
-      <h3>Leave a Comment</h3>
-      <form class="comment-form">
-          <div class="form-group">
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required>
-          </div>
-          <div class="form-group">
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" placeholder="Your email" required>
-          </div>
-          <div class="form-group">
-              <label for="comment">Comment:</label>
-              <textarea id="comment" name="comment" placeholder="Write your comment here" required></textarea>
-          </div>
-          <button type="submit" class="submit-button">
-              <i class="fa fa-paper-plane"></i> Submit
-          </button>
-      </form>
-  </div>
-</div>

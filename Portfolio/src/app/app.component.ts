@@ -13,10 +13,10 @@ export class AppComponent {
   title = 'Portfolio';
   constructor(private authService: AuthService) { }
 
-  @HostListener('window:beforeunload', ['$event'])
-  handleBeforeUnload(event: BeforeUnloadEvent): void {
-    this.authService.clearAll();
-    event.preventDefault();
-    event.returnValue = '';
-  }
+  // @HostListener('window:beforeunload', ['$event'])
+  // handleBeforeUnload(event: BeforeUnloadEvent): void {
+  //   this.authService.clearAll();
+  //   event.preventDefault();
+  //   event.returnValue = '';
+  // }
 }

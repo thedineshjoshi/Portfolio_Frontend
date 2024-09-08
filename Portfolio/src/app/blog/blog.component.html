@@ -4,9 +4,11 @@
         <div class="blog-card" *ngFor="let blog of blogs">
             <img [src]="blog.featuredImageUrl" alt="{{ blog.title }}" class="blog-image" />
             <div class="blog-content">
-                <span class="blog-label">Category</span>
+                <span class="blog-label">{{blog.label}}</span>
                 <h3 class="blog-title">{{ blog.title }}</h3>
                 <p class="blog-preview">{{blog.metaDescription}}</p>
+                <p style="float:right;padding-bottom: 10px;"><strong>Created On:</strong> {{ blog.createdAt | date:'yyyy-MM-dd' }}
+                    <strong >Updated On:</strong> {{ blog.updatedAt | date:'yyyy-MM-dd' }}</p>
                 <a class="blog-read-more" [routerLink]="['/blog-details']" [queryParams]="{ id: blog.id }" target="_blank">Read More</a>
             </div>
         </div>

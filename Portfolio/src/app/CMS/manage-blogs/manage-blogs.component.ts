@@ -20,6 +20,9 @@ export class ManageBlogsComponent {
     title: '',
     metaDescription: '',
     content: '',
+    createdAt:new Date(),
+    updatedAt:new Date(),
+    label:'',
     featuredImageUrl: '',
     youtubeVideoLink: '',
     blogImages: []
@@ -41,6 +44,9 @@ export class ManageBlogsComponent {
       content: '',
       featuredImageUrl: '',
       youtubeVideoLink: '',
+      createdAt:new Date(),
+      updatedAt:new Date(),
+      label:'',
       blogImages: []
     };
     this.openModal();
@@ -134,7 +140,7 @@ export class ManageBlogsComponent {
   }
 
   onFileSelected(event: any) {
-    const file = event.target.files[0];
+    const file = event.target.files ? event.target.files[0] : null;
     if (file) {
       this._apiCallService.uploadImage(file).subscribe(
         (response: any) => {
@@ -145,19 +151,22 @@ export class ManageBlogsComponent {
       );
     }
   }
+  
 
   customImageHandler() {
     const input = document.createElement('input');
     input.setAttribute('type', 'file');
     input.setAttribute('accept', 'image/*');
-    input.click();
+    input.click(); // Trigger file picker dialog
+  
     input.onchange = () => {
       const file = input.files ? input.files[0] : null;
       if (file) {
-        this.uploadImage(file);
+        this.uploadImage(file);  // Upload the image after selection
       }
     };
   }
+  
 
   uploadImage(file: File) {
     this._apiCallService.uploadImage(file).subscribe(

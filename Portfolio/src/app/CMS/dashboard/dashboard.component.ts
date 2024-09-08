@@ -23,6 +23,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
     metaDescription: '',
     content: '',
     featuredImageUrl: '',
+    createdAt:new Date(),
+    updatedAt:new Date(),
+    label:'',
     blogImages: [],
     youtubeVideoLink: ''
   };
