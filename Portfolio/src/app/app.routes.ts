@@ -11,6 +11,7 @@ import { ManageBlogsComponent } from './CMS/manage-blogs/manage-blogs.component'
 import { ManageprojectsComponent } from './CMS/manageprojects/manageprojects.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { AuthguardService } from './service/authguard.service';
+import { ManageTimelineComponent } from './CMS/manage-timeline/manage-timeline.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,5 +26,6 @@ export const routes: Routes = [
     {path:'project',component:ProjectComponent,pathMatch:'full'},
     {path:'dashboard/manageblog',component:ManageBlogsComponent,pathMatch:'full',canActivate:[AuthguardService]},
     {path:'dashboard/manageproject',component:ManageprojectsComponent,pathMatch:'full',canActivate:[AuthguardService]},
-    { path: 'blog-details', component: BlogDetailsComponent }
+    { path: 'blog-details', component: BlogDetailsComponent },
+    {path:'addTimeline',component:ManageTimelineComponent}
 ]

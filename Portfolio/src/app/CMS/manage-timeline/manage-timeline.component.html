@@ -1,0 +1,36 @@
+<nav class="navbar">
+    <ul>
+        <li><a routerLink="/dashboard">Dashboard</a></li>
+        <li><a routerLink="/dashboard/manageblog">Blogs</a></li>
+        <li><a routerLink="/dashboard/manageproject">Projects</a></li>
+        <li><a routerLink="/dashboard/addTimeline">Timeline</a></li>
+
+        <li><a href="#">Settings</a></li>
+    </ul>
+</nav>
+<div class="form-container">
+    <h2>Add Timeline</h2>
+    <form action="#" id="timelineForm" method="POST" (ngSubmit)="addTimeline()">
+        <div class="form-group">
+            <label for="label">Title</label>
+            <input type="text" id="label" name="label" [(ngModel)]="timelines.label" placeholder="Enter the Title">
+        </div>
+        <div class="form-group">
+            <label for="iconUrl" >Icon URL</label>
+            <input type="url" id="iconUrl" [(ngModel)]="timelines.icon_Url" name="icon_Url" placeholder="Enter the icon URL">
+        </div>
+        <div class="form-group">
+            <label for="startDate">Start Date</label>
+            <input type="text" id="startDate" [(ngModel)]="timelines.start_Date" name="start_Date">
+        </div>
+        <div class="form-group">
+            <label for="completedDate" >Completed Date <span class="optional">(optional)</span></label>
+            <input type="text" id="completedDate"[(ngModel)]="timelines.completed_Date" name="completed_Date">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description"[(ngModel)]="timelines.description" name="description" placeholder="Enter a description"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Add to Timeline</button>
+    </form>
+</div>

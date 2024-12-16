@@ -37,6 +37,7 @@ export class BlogDetailsComponent implements OnInit {
         this.blogId = blogId;
         this.apiCallService.getBlogById(blogId).subscribe(
           data => {
+            //const slug = 
             this.blog = data;
             this.loadComments();
           },
@@ -45,7 +46,7 @@ export class BlogDetailsComponent implements OnInit {
           }
         );
       }
-    });
+    })
   }
   sanitizeUrl(url: string): SafeResourceUrl {
     if (url.includes('watch?v=')) {

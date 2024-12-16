@@ -6,3 +6,26 @@
 html {
     scroll-behavior: smooth;
   }
+  #whatsapp {
+    display: block;
+    position: fixed;
+    right: 20px; 
+    bottom: 20px; 
+    background-color: white; 
+    width: 150px; 
+    height: 40px;
+    /*  border-radius: 50%;  */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06); 
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#whatsapp:hover {
+    transform: scale(1.1); /* Slight enlargement */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+    background-color: #20b954; /* Slightly darker shade of green */
+}

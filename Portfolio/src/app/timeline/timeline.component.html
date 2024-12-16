@@ -1,39 +1,13 @@
 <section id="timeline">
     <h2>My Academic Career</h2>
     <div class="timeline">
-        <div class="timeline-item">
-            <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="timeline-item" *ngFor="let timeline of timelines">
+            <div class="timeline-icon"><i class="{{timeline.icon_Url}}"></i></div>
             <div class="timeline-content">
-                <h3>SEE From New Saraswati Vidya Mandir Airy</h3>
-                <span class="date">Completed Date: June 2019</span>
-                <p>Successfully completed my Secondary Education Examination.</p>
-            </div>
-        </div>
+                <h3>{{timeline.label}}</h3>
 
-        <div class="timeline-item">
-            <div class="timeline-icon"> <i class="fas fa-laptop-code"></i></div>
-            <div class="timeline-content">
-                <h3>+2 Computer Science From Radiant Secondary School</h3>
-                <span class="date">Started Date: July 2019 - Completed Date: January 2021</span>
-                <p>Completed my higher secondary education with a focus on computer science.</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-icon"><i class="fas fa-certificate"></i></div>
-            <div class="timeline-content">
-                <h3>PDICA (Professional Diploma in Computer Application)</h3>
-                <span class="date">Started Date: May 2020 - Completed Date: April 2022</span>
-                <p>Earned a professional diploma in computer applications.</p>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-icon"> <i class="fas fa-university"></i></div>
-            <div class="timeline-content">
-                <h3>Computer Engineering at Far Western University</h3>
-                <span class="date">Started Date: April 2021 - Ongoing</span>
-                <p>Currently pursuing a degree in computer engineering.</p>
+                <span class="date">Started Date: {{timeline.start_Date}} - Completed Date: {{timeline.completed_Date}}</span>
+                <p>{{timeline.description}}</p>
             </div>
         </div>
     </div>

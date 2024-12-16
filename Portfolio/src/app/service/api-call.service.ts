@@ -4,6 +4,7 @@ import { catchError, map, Observable, throwError } from 'rxjs';
 import { BlogPost } from '../Model/blog-post.model';
 import { ProjectPost } from '../Model/project-post.model';
 import { BlogComment } from '../Model/BlogComment.model';
+import { Timeline } from '../Model/timeline.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class ApiCallService {
   private blogApiUrl = 'https://localhost:7209/api/Blogs'; // Blog API URL
   private projectApiUrl = 'https://localhost:7209/api/Projects';//Project API URL
   private imageUploadUrl = 'https://localhost:7209/api/Upload/'; // Image upload API URL
+  private timelineUploadUrl = 'https://localhost:7209/api/Timeline';
 
 
   private headers = new HttpHeaders({
@@ -44,6 +46,13 @@ export class ApiCallService {
   }
   deleteBlog(id: string): Observable<any> {
     return this.http.delete(`${this.blogApiUrl}/DeleteBlog/${id}`,{responseType:'json'});
+  }
+
+  addTimeline(timeline:Timeline):Observable<any>{
+    return this.http.post(`${this.timelineUploadUrl}/AddTimeline`,timeline,{responseType:'json'})
+  }
+  getTimeline(): Observable<Timeline[]> {
+    return this.http.get<Timeline[]>(`${this.timelineUploadUrl}/GetTimeline`,{responseType:'json'})
   }
   addComment(comment:BlogComment,blogId:string):Observable<any>
   {
