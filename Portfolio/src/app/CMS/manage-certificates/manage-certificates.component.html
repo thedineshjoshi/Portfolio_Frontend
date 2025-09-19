@@ -1,0 +1,40 @@
+<nav class="navbar">
+  <ul>
+    <li><a routerLink="/dashboard">Dashboard</a></li>
+    <li><a routerLink="/dashboard/manageblog">Blogs</a></li>
+    <li><a routerLink="/dashboard/manageproject">Projects</a></li>
+    <li><a routerLink="/dashboard/addTimeline">Timeline</a></li>
+    <li>Certificates</li>
+    <li><a href="#">Settings</a></li>
+  </ul>
+</nav>
+<div class="form-container">
+  <h2>Add Certificate</h2>
+  <form
+    action="#"
+    id="CertificateForm"
+    method="POST"
+    (ngSubmit)="addCertificate()"
+  >
+    <div class="form-group">
+      <label for="imageUrl">Upload Image</label>
+      <input
+        type="file"
+        id="imageUrl"
+        [(ngModel)]="certificates.certificateImageUrl"
+        name="certificateImageUrl"
+      />
+    </div>
+    <div class="form-group">
+      <label for="label">Certification_Date</label>
+      <input
+        type="text"
+        id="label"
+        name="label"
+        [(ngModel)]="certificates.certification_Date"
+        placeholder="Enter the Certification Date"
+      />
+    </div>
+    <button type="submit" class="submit-btn">Add to Certificate</button>
+  </form>
+</div>

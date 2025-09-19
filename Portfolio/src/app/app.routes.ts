@@ -12,20 +12,52 @@ import { ManageprojectsComponent } from './CMS/manageprojects/manageprojects.com
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { AuthguardService } from './service/authguard.service';
 import { ManageTimelineComponent } from './CMS/manage-timeline/manage-timeline.component';
+import { ManageCertificatesComponent } from './CMS/manage-certificates/manage-certificates.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    {path:'home',component:HomeComponent,pathMatch:'full'},
-    {path:'about',component:AboutComponent,pathMatch:'full'},
-    {path:'timeline',component:TimelineComponent,pathMatch:'full'},
-    {path:'blog',component:BlogComponent,pathMatch:'full'},
-    {path:'contact',component:ContactComponent,pathMatch:'full'},
-    {path:'project',component:ProjectComponent,pathMatch:'full'},
-    {path:'login',component:LoginComponent,pathMatch:'full'},
-    {path:'dashboard',component:DashboardComponent,pathMatch:'full',canActivate:[AuthguardService]},
-    {path:'project',component:ProjectComponent,pathMatch:'full'},
-    {path:'dashboard/manageblog',component:ManageBlogsComponent,pathMatch:'full',canActivate:[AuthguardService]},
-    {path:'dashboard/manageproject',component:ManageprojectsComponent,pathMatch:'full',canActivate:[AuthguardService]},
-    { path: 'blog-details', component: BlogDetailsComponent },
-    {path:'addTimeline',component:ManageTimelineComponent}
-]
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent, pathMatch: 'full' },
+  { path: 'about', component: AboutComponent, pathMatch: 'full' },
+  { path: 'timeline', component: TimelineComponent, pathMatch: 'full' },
+  { path: 'blog', component: BlogComponent, pathMatch: 'full' },
+  { path: 'contact', component: ContactComponent, pathMatch: 'full' },
+  { path: 'project', component: ProjectComponent, pathMatch: 'full' },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    pathMatch: 'full',
+    canActivate: [AuthguardService],
+  },
+  { path: 'project', component: ProjectComponent, pathMatch: 'full' },
+  {
+    path: 'dashboard/manageblog',
+    component: ManageBlogsComponent,
+    pathMatch: 'full',
+    canActivate: [AuthguardService],
+  },
+  {
+    path: 'dashboard/manageproject',
+    component: ManageprojectsComponent,
+    pathMatch: 'full',
+    canActivate: [AuthguardService],
+  },
+  {
+    path: 'blog-details',
+    component: BlogDetailsComponent,
+    pathMatch: 'full',
+    canActivate: [AuthguardService],
+  },
+  {
+    path: 'dashboard/addTimeline',
+    component: ManageTimelineComponent,
+    pathMatch: 'full',
+    canActivate: [AuthguardService],
+  },
+  {
+    path: 'dashboard/addCertificate',
+    component: ManageCertificatesComponent,
+    pathMatch: 'full',
+    canActivate: [AuthguardService],
+  },
+];

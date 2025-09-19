@@ -1,29 +1,37 @@
- <div class="dashboard">
-        <div class="sidebar">
-            <h2>Dashboard</h2>
-            <nav>
-                <ul>
-                    <li><a routerLink="Dashboard">Home</a></li>
-                    <li><a routerLink="manageproject">Projects</a></li>
-                    <li><a routerLink="manageblog">Blogs</a></li>
-                    <li><a routerLink="addTimeline">Timeline</a></li>
-                    <li><a href="#">Settings</a></li>
-                </ul>
-            </nav>
+<div class="dashboard">
+  <div class="sidebar">
+    <h2>Dashboard</h2>
+    <nav>
+      <ul>
+        <li><a routerLink="Dashboard">Home</a></li>
+        <li><a routerLink="manageproject">Projects</a></li>
+        <li><a routerLink="manageblog">Blogs</a></li>
+        <li><a routerLink="addCertificate">Certificate</a></li>
+        <li><a routerLink="addTimeline">Timeline</a></li>
+
+        <li><a href="#">Settings</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <h1>Welcome to Dashboard</h1>
+    </header>
+
+    <!-- Blog posts grid -->
+    <div class="blog-grid">
+      <div class="blog-card" *ngFor="let blog of blogs">
+        <img
+          [src]="blog.featuredImageUrl"
+          alt="{{ blog.title }}"
+          class="blog-image"
+        />
+        <div class="blog-info">
+          <h2 class="blog-title">{{ blog.title }}</h2>
+          <p class="blog-description">{{ blog.metaDescription }}</p>
         </div>
-
-        <div class="main-content">
-            <header>
-                <h1>Welcome to Dashboard</h1>
-            </header>
-
-            <!-- Blog posts grid -->
-            <div class="blog-grid">
-                <div class="blog-card" *ngFor="let blog of blogs">
-                    <img [src]="blog.featuredImageUrl" alt="{{ blog.title }}" class="blog-image">
-                    <div class="blog-info">
-                        <h2 class="blog-title">{{ blog.title }}</h2>
-                        <p class="blog-description">{{ blog.metaDescription }}</p>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </div>
+  </div>
+</div>
